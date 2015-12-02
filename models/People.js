@@ -2,9 +2,9 @@ var keystone = require('keystone');
 var transform = require('model-transform');
 var Types = keystone.Field.Types;
 
-var Contact = new keystone.List('Contact');
+var People = new keystone.List('People');
 
-Contact.add({
+People.add({
 	name: { type: Types.Name, required: true, index: true },
 	email: { type: Types.Email, initial: true, index: true, unique: true },
 	favouriteFlavour: { type: Types.Select, options: 'chocolate, vanilla, strawberry', index: true },
@@ -16,6 +16,6 @@ Contact.add({
 	bio: { type: Types.Markdown, collapse: true },
 });
 
-transform.toJSON(Contact);
-Contact.defaultColumns = 'name, email, favouriteFlavour, birthday, homepage';
-Contact.register();
+transform.toJSON(People);
+People.defaultColumns = 'name, email, favouriteFlavour, birthday, homepage';
+People.register();

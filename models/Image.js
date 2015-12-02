@@ -1,16 +1,15 @@
 var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
-var Gallery = new keystone.List('Gallery', {
+var Image = new keystone.List('Image', {
 	autokey: { from: 'name', path: 'key' },
   //inherits: keystone.List('Media')
 });
 
-Gallery.add({
+Image.add({
 	name: { type: String, required: true },
-	heroImage: { type: Types.CloudinaryImage },
-	images: { type: Types.CloudinaryImages }
+	image: { type: Types.CloudinaryImage },
+  description: { type: String }
 });
 
-Gallery.track = true;
-Gallery.register();
+Image.register();

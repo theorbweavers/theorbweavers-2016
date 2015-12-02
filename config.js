@@ -24,8 +24,9 @@ exports.locals = {
 };
 
 exports.nav = {
-	'people': ['users', 'companies', 'contacts'],
-	'content': ['posts', 'post-categories', 'events', 'jobs', 'galleries'],
+	'people': ['users', 'bands', 'people'],
+	'content': ['posts', 'post-categories', 'events'],
+	'media': ['galleries', 'videos', 'images', 'media'],
 	'discography': ['releases', 'recordings'],
 	'test-schemas': ['autocreates', 'field-tests'],
 };

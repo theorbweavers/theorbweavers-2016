@@ -21,12 +21,13 @@ Recording.add({
   publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
   lyrics: { type: Types.Html, wysiwyg: true, height: 300 },
   image: { type: Types.CloudinaryImage },
-  composers: { type: String },
+  composers: { type: Types.Relationship, ref: 'People', many: true },
+  performers: { type: Types.Relationship, ref: 'People', many: true },
   year: { type: Date },
   releases: { type: Types.Relationship, ref: 'Release', many: true }
 });
 
 
 transform.toJSON(Recording);
-Recording.defaultColumns = 'title, state|20%, author|20%, publishedDate|20%';
+Recording.defaultColumns = 'title, composers, year, state|10%, publishedDate';
 Recording.register();
