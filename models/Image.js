@@ -1,9 +1,10 @@
+var media = require('./Media.js');
 var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
 var Image = new keystone.List('Image', {
 	autokey: { from: 'name', path: 'key' },
-  //inherits: keystone.List('Media')
+  inherits: media.Media
 });
 
 Image.add({
